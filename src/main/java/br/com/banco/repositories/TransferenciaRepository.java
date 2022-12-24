@@ -24,4 +24,5 @@ public interface TransferenciaRepository extends JpaRepository<Transferencia, In
 			+ "AND obj.conta.idConta = :contaId "
 			+ "AND obj.nomeOperadorTransacao = :nomeOperador")
 	List<Transferencia> findByContaAndDatesAndOperador(Integer contaId, LocalDateTime minDate, LocalDateTime maxDate, String nomeOperador);
+
 }
