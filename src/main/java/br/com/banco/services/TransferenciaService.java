@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.banco.entities.Transferencia;
@@ -14,8 +15,9 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class TransferenciaService {
-
-	private final TransferenciaRepository transferenciaRepository;
+	
+	@Autowired
+	private TransferenciaRepository transferenciaRepository;
 
 	public List<Transferencia> findTransferencias(Integer contaId, LocalDate minDate, LocalDate maxDate,
 			String nomeOperador) {
